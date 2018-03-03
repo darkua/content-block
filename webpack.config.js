@@ -1,7 +1,7 @@
 var path = require('path')
 
 function resolve (dir) {
-  return path.join(__dirname, '..', dir)
+  return path.join(__dirname, dir)
 }
 
 module.exports = {
@@ -9,15 +9,15 @@ module.exports = {
     app: ['babel-polyfill','./src/index.js']
   },
   output: {
-    path: resolve("dist"),
+    path: path.join(__dirname, 'dist'),
     filename: '[name].js',
-    
+
   },
   resolve: {
     extensions: ['.js'],
   },
   module: {
-    rules: [ 
+    rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
