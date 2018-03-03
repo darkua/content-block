@@ -1,0 +1,16 @@
+{
+  "name": "content-block",
+  "version": "0.0.1",
+  "description": "ORM for decentralized storage",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
