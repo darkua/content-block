@@ -15,7 +15,7 @@ function defaultReplacer(key) {
   return `${key}.json`;
 }
 
-export default function createBlockstackDriver(config = {}) {
+export function createBlockstackDriver(config = {}) {
   const replacer = config.replacer || defaultReplacer;
 
   // if we pass an options object into either getItem or setItem,

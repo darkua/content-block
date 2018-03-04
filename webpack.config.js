@@ -1,28 +1,28 @@
-var path = require('path')
+// webpack.config.js
+const webpack = require('webpack')
+const path = require('path')
 
-function resolve (dir) {
-  return path.join(__dirname, dir)
-}
-
-module.exports = {
-  entry: {
-    app: ['babel-polyfill','./src/index.js']
-  },
+const config = {
+  context: path.resolve(__dirname, 'src'),
+  entry: '../app.js',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].js',
-
-  },
-  resolve: {
-    extensions: ['.js'],
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
   module: {
-    rules: [
-      {
-        test: /\.js$/,
+    rules: [{
+      test: /\.js$/,
+      include: path.resolve(__dirname, 'src'),
+      use: [{
         loader: 'babel-loader',
-        include: [resolve('src')]
-      }
-    ]
+        options: {
+          presets: [
+            ['es2015', { modules: false }]
+          ]
+        }
+      }]
+    }]
   }
 }
+
+module.exports = config
